@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block body %}
+<h1>Top Page</h1>
+<a href="/create" role="button">CREATE NEW TASK</a>
+{% for post in posts%}
+<h3>タイトル: {{post.title}}</h3>
+<p>期限： {{post.due.date()}}</p>
+<a href="detail/{{ post.id }}" role="button">detail</a>
+<a href="update/{{ post.id }}" role="button">update</a>
+<a href="delete/{{ post.id }}" role="button">delete</a>
+{% endfor %} {% endblock %}
